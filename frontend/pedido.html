@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrutalCafé - Pedidos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pantalla">
+        <div class="tarjeta">
+            <header class="banner-logo">
+                <div class="logo-icono">
+                     <span>BrutalCafé</span>
+                </div>
+                <div class="logo-texto">
+                    <h1>BrutalCafé</h1>
+                </div>
+            </header>
+
+            <form id="formulario-pedido"> 
+                <div class="contenedor-columnas">
+                    
+                    <div class="columna">
+                        <div class="campo">
+                            <label for="nombre">Introduzca nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Introduce nombre" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="correo">Introduzca correo electrónico</label>
+                            <input type="email" id="correo" name="correo" placeholder="Introduce correo" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="producto">Seleccione un producto</label>
+                            <select id="producto" name="producto" required>
+                                <option value="" disabled selected>productos</option>
+                                <option value="Café">Café</option>
+                                <option value="Té">Té</option>
+                                <option value="Pastel">Pastel</option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo-cantidad">
+                            <label>Cantidad</label>
+                            <div class="contenedor-contador">
+                                <button type="button" class="btn-contador" id="btn-restar">-</button>
+                                <span id="numero">1</span>
+                                <button type="button" class="btn-contador" id="btn-sumar">+</button>
+                            </div>
+                            <input type="hidden" id="cantidad-input" name="cantidad" value="1">
+                        </div>
+
+                        <div class="campo campo-checkbox">
+                            <input type="checkbox" id="para-llevar" name="para_llevar" value="Sí">
+                            <label for="para-llevar">Pedir para llevar</label>
+                        </div>
+                    </div>
+
+                    <div class="columna">
+                        <div class="campo">
+                            <label>Tamaño</label>
+                            <div class="opciones-radio">
+                                <label class="btn-radio">
+                                    <input type="radio" name="tamano" value="Pequeño" required>
+                                    <span>Pequeño</span>
+                                </label>
+                                <label class="btn-radio">
+                                    <input type="radio" name="tamano" value="Mediano">
+                                    <span>Mediano</span>
+                                </label>
+                                <label class="btn-radio">
+                                    <input type="radio" name="tamano" value="Grande">
+                                    <span>Grande</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="observaciones">Observaciones</label>
+                            <textarea id="observaciones" name="observaciones" placeholder="Alguna petición especial"></textarea>
+                        </div>
+
+                        <div class="acciones">
+                            <button type="reset" class="btn-accion btn-limpiar" id="btn-limpiar">Limpiar</button>
+                            <button type="submit" class="btn-accion btn-pedir">Pedir</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>

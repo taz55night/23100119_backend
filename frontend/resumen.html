@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del pedido - BrutalCafé</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pantalla">
+        <div class="tarjeta" style="padding: 30px; text-align: left;">
+            <h1>¡Pedido Realizado con Éxito!</h1>
+            <h2>Detalles de tu compra en BrutalCafé:</h2>
+            
+            <p><strong>Nombre:</strong> <span id="resumen-nombre"></span></p>
+            <p><strong>Correo Electrónico:</strong> <span id="resumen-correo"></span></p>
+            <p><strong>Producto:</strong> <span id="resumen-producto"></span></p>
+            <p><strong>Cantidad:</strong> <span id="resumen-cantidad"></span></p>
+            <p><strong>Tamaño:</strong> <span id="resumen-tamano"></span></p>
+            <p><strong>¿Para llevar?:</strong> <span id="resumen-llevar"></span></p>
+            <p><strong>Observaciones:</strong> <span id="resumen-observaciones"></span></p>
+
+            <br>
+            <a href="pedido.html" class="btn-accion" style="display: inline-block; text-align: center; text-decoration: none; padding: 10px 20px; background-color: #6f4e37; color: white; border-radius: 5px;">Hacer otro pedido</a>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        document.getElementById('resumen-nombre').textContent = params.get('nombre') || 'N/A';
+        document.getElementById('resumen-correo').textContent = params.get('correo') || 'N/A';
+        document.getElementById('resumen-producto').textContent = params.get('producto') || 'N/A';
+        document.getElementById('resumen-cantidad').textContent = params.get('cantidad') || '1';
+        document.getElementById('resumen-tamano').textContent = params.get('tamano') || 'N/A';
+        document.getElementById('resumen-llevar').textContent = params.get('para_llevar') || 'No';
+        document.getElementById('resumen-observaciones').textContent = params.get('observaciones') || 'Ninguna';
+    </script>
+</body>
+</html>
